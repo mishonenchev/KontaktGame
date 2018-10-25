@@ -1,0 +1,108 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+	font-family: sans-serif;
+}
+.container{
+	height: 100%;
+	max-width: 700px;
+	position: relative;
+	margin: 0 auto;
+}
+.containerWord{
+	height: 30%;
+	width: 80%;
+	border: 2px solid black;
+	border-radius: 5px;
+	border-top-right-radius: 0px;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#wordParagraph{
+	font-size: 80px;
+	font-family: sans-serif;
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+#timer{
+	
+	border: 2px solid black;
+	position: absolute;
+	top: -2px;
+	right: -2px;
+}
+#timer>p{
+	font-size: 25px;
+}
+input{
+	position: absolute;
+	bottom: -60px;
+	border: 2px solid black;
+	border-radius: 5px;
+	width: 55%;
+	font-size: 25px;
+	padding:10px 20px;
+	font-family: sans-serif;
+}
+#buttonForm{
+	position: absolute;
+	right: 0;
+	bottom: -60px;
+	font-size: 25px;
+	width: 40%;
+	padding:10px 20px;
+	font-family: sans-serif;
+	background-color: white;
+	box-shadow: 2px 2px;
+}
+.activePlayers{
+	position: absolute;
+	left: calc(-30% - 10px);
+	height: auto;
+	width: 30%;
+	border: 2px solid black;
+	
+}
+.activePlayers>div{
+	height:auto;
+	
+	
+	
+}
+.activePlayers>div>p{
+	border-bottom: 2px solid black;
+	font-size: 15px;
+	padding: 3px;
+	
+}
+.activePlayers>button{
+	font-size: 22px;
+	height:50px;
+	width: 100%;
+	border: 0px;
+}
+.usedWords{
+	position: absolute;
+	right: calc(-30% - 10px);
+	height: auto;
+	width: 30%;
+	border: 2px solid black;
+}
+.usedWords>p{
+	font-size: 20px;
+}
+.usedWords>div{
+	border-bottom: 2px solid black;
+	text-align: center;
+	padding: 10px 20px;
+}

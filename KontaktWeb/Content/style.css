@@ -1,108 +1,230 @@
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+﻿@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-	width: 100vw;
-	height: 100vh;
-	font-family: sans-serif;
+
+body {
+    transition: 0.5s;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Roboto", sans-serif !important;
+    background: linear-gradient(to left, rgb(54, 7, 206), rgb(23, 26, 224));
 }
-.container{
-	height: 100%;
-	max-width: 700px;
-	position: relative;
-	margin: 0 auto;
+
+.enter-name-screen {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to left, rgb(54, 7, 206), rgb(23, 26, 224));
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.containerWord{
-	height: 30%;
-	width: 80%;
-	border: 2px solid black;
-	border-radius: 5px;
-	border-top-right-radius: 0px;
-	position: absolute;
-	top: 20%;
-	left: 50%;
-	transform: translateX(-50%);
+
+    .enter-name-screen > div {
+    }
+
+.enter-name {
+    transition: 0.5s;
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 90%;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 15px;
+    border: 0;
+    outline: 0;
+    margin-top: 20px;
 }
-#wordParagraph{
-	font-size: 80px;
-	font-family: sans-serif;
-	
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+
+.enter-name-button {
+    cursor: pointer;
+    background-color: #2778f9;
+    color: white;
 }
-#timer{
-	
-	border: 2px solid black;
-	position: absolute;
-	top: -2px;
-	right: -2px;
+
+    .enter-name-button:hover {
+        background-color: blue;
+    }
+
+.enter-name-screen > div > h1 {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 300;
+    text-align: center;
 }
-#timer>p{
-	font-size: 25px;
+
+.enter-name-inner {
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-input{
-	position: absolute;
-	bottom: -60px;
-	border: 2px solid black;
-	border-radius: 5px;
-	width: 55%;
-	font-size: 25px;
-	padding:10px 20px;
-	font-family: sans-serif;
+
+.container {
+    height: 100%;
+    max-width: 700px;
+    position: relative;
+    margin: 0 auto;
 }
-#buttonForm{
-	position: absolute;
-	right: 0;
-	bottom: -60px;
-	font-size: 25px;
-	width: 40%;
-	padding:10px 20px;
-	font-family: sans-serif;
-	background-color: white;
-	box-shadow: 2px 2px;
+
+.containerWord {
+    height: 30%;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
 }
-.activePlayers{
-	position: absolute;
-	left: calc(-30% - 10px);
-	height: auto;
-	width: 30%;
-	border: 2px solid black;
-	
+
+#wordParagraph {
+    font-style: italic;
+    font-size: 80px;
+    font-family: sans-serif;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
-.activePlayers>div{
-	height:auto;
-	
-	
-	
+
+#timer {
+    padding: 5px;
+    background-color: white;
+    border: 2px solid black;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    border-bottom-left-radius: 5px;
 }
-.activePlayers>div>p{
-	border-bottom: 2px solid black;
-	font-size: 15px;
-	padding: 3px;
-	
+
+    #timer > p {
+        font-size: 25px;
+    }
+
+.main-input {
+    outline: 0;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    position: absolute;
+    bottom: -60px;
+    font-weight: 300;
+    border-radius: 10px;
+    width: 55%;
+    font-size: 25px;
+    padding: 10px;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.activePlayers>button{
-	font-size: 22px;
-	height:50px;
-	width: 100%;
-	border: 0px;
+
+#buttonForm {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    font-style: italic;
+    font-weight: 300;
+    outline: 0;
+    transition: 0.5s;
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+    font-size: 25px;
+    width: 40%;
+    padding: 10px;
+    border: none;
+    font-family: sans-serif;
+    background-color: lightgray;
+    border-radius: 10px;
 }
-.usedWords{
-	position: absolute;
-	right: calc(-30% - 10px);
-	height: auto;
-	width: 30%;
-	border: 2px solid black;
+
+    #buttonForm:hover {
+        cursor: pointer;
+        background-color: lightblue;
+    }
+
+.activePlayers {
+    background-color: white;
+    position: absolute;
+    left: calc(-30% - 10px);
+    height: auto;
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
 }
-.usedWords>p{
-	font-size: 20px;
+
+.activePlayers-inner {
+    max-height: 252px;
+    overflow-y: scroll;
 }
-.usedWords>div{
-	border-bottom: 2px solid black;
-	text-align: center;
-	padding: 10px 20px;
+
+.active-player-box {
+    height: auto;
+    border-bottom: 1px;
+    padding: 6px;
+    padding-left: 10px;
+    border-bottom: 1px solid black;
 }
+
+    .active-player-box > p {
+        font-size: 19px;
+    }
+
+.activePlayers > button {
+    transition: 0.5s;
+    background-color: lightgray;
+    cursor: pointer;
+    font-size: 22px;
+    height: 50px;
+    width: 100%;
+    border: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+    .activePlayers > button:hover {
+        background-color: lightblue;
+    }
+
+.green-dot {
+    margin-top: 8px;
+    margin-right: 10px;
+    float: left;
+    height: 7px;
+    width: 7px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.usedWords {
+    background-color: white;
+    position: absolute;
+    right: calc(-30% - 10px);
+    height: auto;
+    width: 30%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+    .usedWords > p {
+        font-size: 23px;
+        padding: 5px;
+    }
+
+    .usedWords > div {
+        border-bottom: 2px solid black;
+        text-align: center;
+        padding: 10px 20px;
+    }

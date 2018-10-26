@@ -10,7 +10,7 @@ namespace KontaktWeb
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/jquery-signalR-2.3.0.js",
+                        "~/Scripts/jquery.signalR-2.3.0.js",
                         "~/Scripts/knockout-3.4.2.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

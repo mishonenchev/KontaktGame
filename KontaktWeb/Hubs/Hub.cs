@@ -6,11 +6,11 @@ using Microsoft.AspNet.SignalR;
 
 namespace KontaktWeb.Hubs
 {
-    public class ChatHub : Hub
+    public class Hub : Microsoft.AspNet.SignalR.Hub
     {
-        public void Hello()
+        public void SendMessage(string msg)
         {
-            Clients.All.hello();
+            Clients.All.newMessage(msg);
         }
     }
 }

@@ -8,9 +8,10 @@ namespace KontaktWeb.Hubs
 {
     public class Hub : Microsoft.AspNet.SignalR.Hub
     {
-        public void SendMessage(string msg)
+        public void SendMessage(string message)
         {
-            Clients.All.newMessage(msg);
+            Clients.All.newMessage(message);
         }
+
     }
 }

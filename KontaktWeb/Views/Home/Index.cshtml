@@ -16,13 +16,11 @@
         </div>
     </div>
     <div class="container">
-        <script src="~/bundles/jquery"></script>
-
         <div class="containerWord">
             <div id="timer"><p>1:54</p></div>
             <p id="wordParagraph">Хирошима</p>
-            <input type="text" class="enter-name main-input" placeholder="Въведи дума..">
-            <button id="buttonForm">КОНТАКТ</button>
+            <input data-bind="value: message" type="text" class="enter-name main-input" placeholder="Въведи дума..">
+            <button id="buttonForm" data-bind="click: send">КОНТАКТ</button>
             <div class="activePlayers">
                 <div class="activePlayers-inner">
                     <div class="active-player-box">
@@ -57,6 +55,12 @@
                         <span class="green-dot"></span>
                         <p>Pi6kohui</p>
                     </div>
+                    <!-- ko foreach: messages -->
+                    <div class="active-player-box">
+                        <span class="green-dot"></span>
+                        <p data-bind="text: $data"></p>
+                    </div>
+                    <!-- /ko -->
                 </div>
 
                 <button>Откажи се</button>
@@ -66,7 +70,9 @@
                 <p>Хитлер, Евреин, Пещ</p>
             </div>
         </div>
+        </div>
         @Scripts.Render("~/bundles/jquery")
         <script src="~/Scripts/app/chatViewModel.js"></script>
         <script src="~/Scripts/app/main.js"></script>
 </body>
+</html>

@@ -4,7 +4,6 @@ function ViewModel() {
     var self = this;
     self.message = ko.observable();
     self.send = function () {
-        console.log("hey");
         contosoChatHubProxy.invoke('SendMessage', self.message());
         self.message("");
     };

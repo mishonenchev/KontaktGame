@@ -1,5 +1,6 @@
 ﻿var connection = $.hubConnection();
 var contosoChatHubProxy = connection.createHubProxy('Hub');
+
 function ViewModel() {
     var self = this;
     self.message = ko.observable();
@@ -12,9 +13,10 @@ function ViewModel() {
 
 }
 var vm = new ViewModel();
+ko.applyBindings(vm);
 contosoChatHubProxy.on('newMessage', function (message) {
     vm.messages.push(message);
 });
 connection.start().done(function () {
-    ko.applyBindings(vm);
+
 });

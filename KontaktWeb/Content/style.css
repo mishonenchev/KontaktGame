@@ -1,4 +1,4 @@
-﻿@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 * {
     margin: 0;
@@ -26,8 +26,6 @@ body {
     justify-content: center;
 }
 
-    .enter-name-screen > div {
-    }
 
 .enter-name {
     transition: 0.5s;
@@ -76,14 +74,14 @@ body {
     margin: 0 auto;
 }
 
-.containerWord {
+.container-word {
     height: 30%;
     width: 80%;
     border: 2px solid black;
     border-radius: 5px;
     border-top-right-radius: 0px;
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
@@ -98,6 +96,18 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+
+#questionAsked {
+    padding: 5px;
+    background-color: #f2f2f2;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+    text-align: center;
+    border-top: 1px solid black;
+    font-style: italic;
 }
 
 #timer {
@@ -122,14 +132,14 @@ body {
     bottom: -60px;
     font-weight: 300;
     border-radius: 10px;
-    width: 55%;
+    width: 100%;
     font-size: 25px;
     padding: 10px;
     font-family: sans-serif;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-#buttonForm {
+.buttonForm {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     font-style: italic;
     font-weight: 300;
@@ -137,7 +147,7 @@ body {
     transition: 0.5s;
     position: absolute;
     right: 0;
-    bottom: -60px;
+    bottom: -120px;
     font-size: 25px;
     width: 40%;
     padding: 10px;
@@ -147,10 +157,25 @@ body {
     border-radius: 10px;
 }
 
-    #buttonForm:hover {
-        cursor: pointer;
-        background-color: lightblue;
-    }
+.buttonFormContact:hover {
+    cursor: pointer;
+    background-color: lightblue;
+}
+
+.buttonFormGuess:hover {
+    cursor: pointer;
+    background-color: lightgreen;
+}
+
+.buttonFormGuess {
+    right: 0;
+    width: 48%;
+}
+
+.buttonFormContact {
+    left: 0;
+    width: 48%;
+}
 
 .activePlayers {
     background-color: white;
@@ -204,21 +229,25 @@ body {
     width: 7px;
     background-color: green;
     border-radius: 50%;
-    display: inline-block;
 }
 
 .usedWords {
     background-color: white;
     position: absolute;
-    right: calc(-30% - 10px);
+    right: calc(-40% - 10px);
     height: auto;
-    width: 30%;
-    border: 2px solid black;
+    max-height: 300px;
+    overflow-y: scroll;
+    width: 40%;
+    border: 1px solid black;
     border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
     padding: 7px;
 }
 
     .usedWords > p {
+        text-align: center;
         font-size: 23px;
         padding: 5px;
     }
@@ -226,5 +255,74 @@ body {
     .usedWords > div {
         border-bottom: 2px solid black;
         text-align: center;
+        word-break: normal;
         padding: 10px 20px;
     }
+
+.chat-log-container {
+    position: absolute;
+    top: 57%;
+    height: 30%;
+    width: 100%;
+    background-color: white;
+    border: 2px solid black;
+    overflow-y: scroll;
+}
+
+.chat-log {
+    width: 100%;
+    border-bottom: 1px solid black;
+    background-color: #f2f2f2;
+    padding: 7px;
+}
+
+    .chat-log > p {
+        margin-left: 20px;
+        font-size: 22px;
+        color: green;
+    }
+
+@media(max-width:550px) {
+    body {
+        transition: 0s;
+        background-color: lightgreen;
+    }
+
+    #wordParagraph {
+        font-size: 10vw;
+    }
+
+    .usedWords {
+        display: none;
+    }
+
+    .activePlayers {
+        display: none;
+    }
+
+    .chat-log-container {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .chat-log > p {
+        font-size: 19px;
+    }
+
+    #wordParagraph {
+        top: 44%;
+    }
+
+    .chat-log-container {
+        top: 60%;
+    }
+}
+
+
+@media(min-width:450px) {
+    body {
+        transition: 0s;
+        background-color: lightgreen;
+    }
+}

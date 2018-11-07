@@ -8,54 +8,19 @@
     @Styles.Render("~/Content/style.css")
 </head>
 <body>
-    <div class="enter-name-screen">
-        <div class="enter-name-inner">
-            <h1>Въведете вашето име:</h1>
-            <input type="text" class="enter-name" placeholder="Име...">
-            <button class="enter-name enter-name-button" onclick="startGame()">ВЛЕЗ</button>
-        </div>
-    </div>
     <div class="container">
         <div class="container-word">
             <div id="timer"><p><span id="timerMinutes">1</span>:<span id="timerSeconds">54</span></p></div>
             <p id="wordParagraph">Хирошима</p>
-            <p id="questionAsked">Думата обвързана ли е с атомна бомба? </p>
-            <input data-bind="value: message" type="text" class="enter-name main-input" placeholder="Въведи дума..">
-            <button data-bind="click: send" class="buttonForm buttonFormContact">КОНТАКТ</button>
+            <p id="questionAsked">Въпрос:<span id="question"></span></p>
+            <input type="text" class="enter-name main-input" placeholder="Въведи дума..">
+            <button class="buttonForm buttonFormContact">КОНТАКТ</button>
             <button class="buttonForm buttonFormGuess">ПОЗНАЙ</button>
             <div class="activePlayers">
-                <div class="activePlayers-inner">
+                <div class="activePlayers-inner" data-bind="foreach: users">
                     <div class="active-player-box">
                         <span class="green-dot"></span>
-                        <p>Ivan</p>
-                    </div>
-                    <div class="active-player-box">
-                        <span class="green-dot"></span>
-                        <p>Milen</p>
-                    </div>
-                    <div class="active-player-box">
-                        <span class="green-dot"></span>
-                        <p>Valentin</p>
-                    </div>
-                    <div class="active-player-box">
-                        <span class="green-dot"></span>
-                        <p>Aleksandur</p>
-                    </div>
-                    <div class="active-player-box">
-                        <span class="green-dot"></span>
-                        <p>Mihail</p>
-                    </div>
-                    <div class="active-player-box">
-                        <span class="green-dot"></span>
-                        <p>Blagovest</p>
-                    </div>
-                    <div class="active-player-box">
-                        <span class="green-dot"></span>
-                        <p>Pi6kohui</p>
-                    </div>
-                    <div class="active-player-box">
-                        <span class="green-dot"></span>
-                        <p>Pi6kohui</p>
+                        <p data-bind="text: name"></p>
                     </div>
                 </div>
 
@@ -81,26 +46,13 @@
                 <p>Играта започва след 10 секунди... Пригответе се!</p>
             </div>
             <div class="chat-log">
-                <p>Играта започва след 10 секунди... Пригответе се!</p>
-            </div>
-            <div class="chat-log">
-                <p>Играта започва след 10 секунди... Пригответе се!</p>
-            </div>
-            <div class="chat-log">
-                <p>Играта започва след 10 секунди... Пригответе се!</p>
-            </div>
-            <div class="chat-log">
                 <p style="color: rgba(255,0,0) !important;">Ако четеш това си голям педал!</p>
             </div>
-            <!-- ko foreach: messages -->
-            <div class="chat-log">
-                <p data-bind="text: $data"></p>
-            </div>
-            <!-- /ko -->
+            
         </div>
     </div>
     @Scripts.Render("~/bundles/jquery")
-    <script src="~/Scripts/app/chatViewModel.js"></script>
+    <script src="~/Scripts/app/Gameplay.js"></script>
     <script src="~/Scripts/app/main.js"></script>
 </body>
 </html>

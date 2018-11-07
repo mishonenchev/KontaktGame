@@ -1,0 +1,22 @@
+﻿@model KontaktWeb.Models.LoginViewModel
+@{
+    ViewBag.Title = "KontaktGame";
+}
+<html>
+<head>
+    @Styles.Render("~/Content/style.css")
+</head>
+<body>
+    <div class="enter-name-screen">
+        <div class="enter-name-inner">
+            <h1>Въведете вашето име:</h1>
+            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken();
+                @Html.TextBoxFor(m => m.Name, new { @class = "enter-name", @placeholder = "Име..." })
+                <button class="enter-name enter-name-button" type="submit"> ВЛЕЗ</button>
+            }
+        </div>
+    </div>
+</body>
+</html>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KontaktGame.Models
 {
-    class UsedWord
+    public class UsedWord
     {
         [Key]
         public int Id { get; set; }

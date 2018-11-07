@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KontaktWeb", "KontaktWeb\Ko
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KontaktGame.Models", "KontaktGame.Models\KontaktGame.Models.csproj", "{319B7A33-D093-4579-98D8-255144184665}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KontaktGame.Database", "KontaktGame.Database\KontaktGame.Database.csproj", "{9B9ACCB7-DC23-4BD6-B999-ADABA4CFD096}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KontaktGame.Services", "KontaktGame.Services\KontaktGame.Services.csproj", "{90E6292E-FD31-4D5A-92FB-F18CB6778A28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{319B7A33-D093-4579-98D8-255144184665}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{319B7A33-D093-4579-98D8-255144184665}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{319B7A33-D093-4579-98D8-255144184665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B9ACCB7-DC23-4BD6-B999-ADABA4CFD096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B9ACCB7-DC23-4BD6-B999-ADABA4CFD096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B9ACCB7-DC23-4BD6-B999-ADABA4CFD096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B9ACCB7-DC23-4BD6-B999-ADABA4CFD096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90E6292E-FD31-4D5A-92FB-F18CB6778A28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E6292E-FD31-4D5A-92FB-F18CB6778A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E6292E-FD31-4D5A-92FB-F18CB6778A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90E6292E-FD31-4D5A-92FB-F18CB6778A28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

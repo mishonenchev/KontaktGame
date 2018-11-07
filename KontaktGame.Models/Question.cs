@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KontaktGame.Models
 {
-    class Question
+    public class Question
     {
         [Key]
         public int Id { get; set; }

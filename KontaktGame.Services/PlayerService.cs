@@ -41,9 +41,28 @@ namespace KontaktGame.Services
         {
             return _playerRepository.Where(x => x.CookieId == cookie).FirstOrDefault();
         }
+        public Player GetByConId(string conId)
+        {
+           return _playerRepository.Where(x => x.ConID == conId).FirstOrDefault();
+        }
+        public void RemoveInactivePlayers()
+        {
+            var dateTime = DateTime.Now.AddHours(-1);
+            var inactivePlayers = _playerRepository.Where(x => x.IsActive == false && x.LastActiveTime < dateTime).ToList();
+            foreach (var item in inactivePlayers)
+            {
+                _playerRepository.Remove(item);
+            }
+            _playerRepository.SaveChanges();
+
+        }
         public List<Player> GetAll()
         {
             return _playerRepository.GetAll().ToList();
+        }
+        public void Update()
+        {
+            _playerRepository.SaveChanges();
         }
     }
 }

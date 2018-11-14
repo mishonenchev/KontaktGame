@@ -15,5 +15,8 @@ namespace KontaktGame.Models
         public string Name { get; set; }
         public bool IsAsked { get; set; }
         public string CookieId { get; set; }
+        public string ConID { get; set; }
+        public bool IsActive { get; set; }
+        public DateTime LastActiveTime { get; set; }
     }
 }

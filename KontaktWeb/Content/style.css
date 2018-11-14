@@ -11,13 +11,13 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: "Roboto", sans-serif !important;
-    background: linear-gradient(to left, rgb(54, 7, 206), rgb(23, 26, 224));
+    background: linear-gradient(to left, rgb(173,216,230), rgb(173,216,230));
 }
 
 .enter-name-screen {
     display: block;
     position: absolute;
-    z-index: 2;
+    z-index: 99;
     height: 100vh;
     width: 100vw;
     background: linear-gradient(to left, rgb(54, 7, 206), rgb(23, 26, 224));
@@ -81,7 +81,7 @@ body {
     border-radius: 5px;
     border-top-right-radius: 0px;
     position: absolute;
-    top: 10%;
+    top: 7%;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
@@ -282,6 +282,27 @@ body {
         color: green;
     }
 
+.active-players-button {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 20%;
+    right: 0;
+    transform: translateX(100%);
+    font-size: 40px;
+    background-color: #f2f2f2;
+    padding: 3px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid black;
+    border-left: 0px;
+}
+
+.used-words-button {
+    left: 0 !important;
+    transform: translateX(-200%);
+}
+
 @media(max-width:550px) {
     body {
         transition: 0s;
@@ -293,10 +314,6 @@ body {
     }
 
     .usedWords {
-        display: none;
-    }
-
-    .activePlayers {
         display: none;
     }
 
@@ -317,8 +334,54 @@ body {
     .chat-log-container {
         top: 60%;
     }
+
+    .activePlayers {
+        z-index: 3;
+        transition: 0.5s;
+        display: block;
+        top: 0%;
+        left: 0;
+        transform: translateX(calc(-100% - 10vw));
+        width: 70%;
+        border-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .usedWords {
+        z-index: 3;
+        transition: 0.5s;
+        display: block;
+        top: 0%;
+        right: 0;
+        transform: translateX(calc(100% + 10vw));
+        width: 70%;
+        border-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .leftArrow {
+        transition: 0.5s;
+    }
+
+    .container {
+        overflow: hidden;
+    }
+
+    .active-players-button {
+        display: block;
+    }
 }
 
+@media(max-width:550px) {
+    #timer {
+    }
+
+    .chat-log-container {
+        top: 65%;
+    }
+}
 
 @media(min-width:450px) {
     body {

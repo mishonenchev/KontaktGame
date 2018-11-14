@@ -13,5 +13,8 @@ namespace KontaktGame.Services.Contracts
         string GenerateCookie();
         Player GetPlayerByCookie(string cookie);
         List<Player> GetAll();
+        void Update();
+        Player GetByConId(string conId);
+        void RemoveInactivePlayers();
     }
 }

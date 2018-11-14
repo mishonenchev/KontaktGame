@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using KontaktWeb.Hubs;
 
 namespace KontaktWeb.Controllers
 {
@@ -18,12 +19,13 @@ namespace KontaktWeb.Controllers
         }
         public ActionResult Index()
         {
-            if (Request.Cookies.AllKeys.Any(x => x == "auth"))
+            if (!Request.Cookies.AllKeys.Any(x => x == "auth"))
             {
-                if (_playerService.GetPlayerByCookie(Request.Cookies.Get("auth").Value) == null)
-                {
-                    return View("Login");
-                }
+                return View("Login");
+            }
+            else if (_playerService.GetPlayerByCookie(Request.Cookies.Get("auth").Value) == null)
+            {
+                return View("Login");
             }
             return View("Index");
         }
@@ -32,11 +34,13 @@ namespace KontaktWeb.Controllers
             if (!String.IsNullOrEmpty(vm.Name))
             {
                 string cookie = _playerService.GenerateCookie();
-                _playerService.AddPlayer(new Player() { Name = vm.Name, IsAsked = false, CookieId = cookie });
-                Response.AppendCookie(new HttpCookie("auth", cookie));
+                _playerService.AddPlayer(new Player() { Name = vm.Name, IsAsked = false, CookieId = cookie, IsActive = true, LastActiveTime = DateTime.Now });
+                var cookieObj = new HttpCookie("auth", cookie);
+                cookieObj.Expires = DateTime.Now.AddHours(2);
+                Response.AppendCookie(cookieObj);
                 return RedirectToAction("Index");
             }
-            return View();
+            return View("Login");
         }
     }
 }

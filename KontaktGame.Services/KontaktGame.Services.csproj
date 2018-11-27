@@ -41,8 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IPlayerService.cs" />
+    <Compile Include="Contracts\IQuestionService.cs" />
+    <Compile Include="Contracts\IUsedWordService.cs" />
+    <Compile Include="Contracts\IWordToGuessService.cs" />
     <Compile Include="PlayerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionService.cs" />
+    <Compile Include="UsedWordService.cs" />
+    <Compile Include="WordToGuessService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KontaktGame.Database\KontaktGame.Database.csproj">

@@ -16,10 +16,11 @@
             <div id="timer"><p><span id="timerMinutes">1</span>:<span id="timerSeconds">54</span></p></div>
             <p id="wordParagraph">Хирошима</p>
             <p id="questionAsked">Въпрос:<span id="question"></span></p>
-            <input type="text" data-bind="value: message" class="enter-name main-input" placeholder="Въведи дума..">
-            <button data-bind="click: message()!='' ? send : function(){}" class="buttonForm buttonFormContact" >КОНТАКТ</button>
-            <button class="buttonForm buttonFormGuess">ПОЗНАЙ</button>
+            <input type="text" data-bind="value: word" class="enter-name main-input" placeholder="Въведи дума..">
+            <button data-bind="click: word()!='' ? send : function(){}, text: button1" class="buttonForm buttonFormContact" >КОНТАКТ</button>
+            <button data-bind="text: button2" class="buttonForm buttonFormGuess">ПОЗНАЙ</button>
             <div class="activePlayers">
+                <div class="active-players-button" onclick="displayActivePlayers()"><div id="leftArrow">></div></div>
                 <div class="activePlayers-inner">
                     <!-- ko foreach: users-->
                     <div class="active-player-box">
@@ -30,17 +31,19 @@
                 </div>
                 <button>Откажи се</button>
             </div>
-            <div class="usedWords">
-                <div>Използвани думи</div>
+            <div class="used-words-container">
+                <div class="used-words-button" onclick="displayUsedWord()"><div id="rightArrow">&#60;</div></div>
+                <div class="used-words-inner">Използвани думи</div>
+                <div class="used-words-scroll"></div>
                 <p>Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, </p>
             </div>
         </div>
 
-        <div class="chat-log-container">
+        <div id="messages" class="chat-log-container">
             <div class="chat-log">
                 <p style="color: rgba(255,0,0) !important;">Ако четеш това си голям педал!</p>
             </div>
-            <!--ko foreach: messages-->
+            <!--ko foreach: words-->
             <div class="chat-log">
                 <p data-bind="text: $data"></p>
             </div>

@@ -1,0 +1,391 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    transition: 0.5s;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Roboto", sans-serif !important;
+    background: linear-gradient(to left, rgb(173,216,230), rgb(173,216,230));
+}
+
+.enter-name-screen {
+    display: block;
+    position: absolute;
+    z-index: 99;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to left, rgb(54, 7, 206), rgb(23, 26, 224));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.enter-name {
+    transition: 0.5s;
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 90%;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 15px;
+    border: 0;
+    outline: 0;
+    margin-top: 20px;
+}
+
+.enter-name-button {
+    cursor: pointer;
+    background-color: #2778f9;
+    color: white;
+}
+
+    .enter-name-button:hover {
+        background-color: blue;
+    }
+
+.enter-name-screen > div > h1 {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 300;
+    text-align: center;
+}
+
+.enter-name-inner {
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.container {
+    height: 100%;
+    max-width: 700px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.container-word {
+    height: 30%;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+}
+
+#wordParagraph {
+    font-style: italic;
+    font-size: 80px;
+    font-family: sans-serif;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#questionAsked {
+    padding: 5px;
+    background-color: #f2f2f2;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+    text-align: center;
+    border-top: 1px solid black;
+    font-style: italic;
+}
+
+#timer {
+    padding: 5px;
+    background-color: white;
+    border: 2px solid black;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    border-bottom-left-radius: 5px;
+}
+
+    #timer > p {
+        font-size: 25px;
+    }
+
+.main-input {
+    outline: 0;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    position: absolute;
+    bottom: -60px;
+    font-weight: 300;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 25px;
+    padding: 10px;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.buttonForm {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    font-style: italic;
+    font-weight: 300;
+    outline: 0;
+    transition: 0.5s;
+    position: absolute;
+    right: 0;
+    bottom: -120px;
+    font-size: 25px;
+    width: 40%;
+    padding: 10px;
+    border: none;
+    font-family: sans-serif;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.buttonFormContact:hover {
+    cursor: pointer;
+    background-color: lightblue;
+}
+
+.buttonFormGuess:hover {
+    cursor: pointer;
+    background-color: lightgreen;
+}
+
+.buttonFormGuess {
+    right: 0;
+    width: 48%;
+}
+
+.buttonFormContact {
+    left: 0;
+    width: 48%;
+}
+
+.activePlayers {
+    background-color: white;
+    position: absolute;
+    left: calc(-30% - 10px);
+    height: auto;
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+}
+
+.activePlayers-inner {
+    max-height: 252px;
+    overflow-y: scroll;
+}
+
+.active-player-box {
+    height: auto;
+    border-bottom: 1px;
+    padding: 6px;
+    padding-left: 10px;
+    border-bottom: 1px solid black;
+}
+
+    .active-player-box > p {
+        font-size: 19px;
+    }
+
+.activePlayers > button {
+    transition: 0.5s;
+    background-color: lightgray;
+    cursor: pointer;
+    font-size: 22px;
+    height: 50px;
+    width: 100%;
+    border: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+    .activePlayers > button:hover {
+        background-color: lightblue;
+    }
+
+.green-dot {
+    margin-top: 8px;
+    margin-right: 10px;
+    float: left;
+    height: 7px;
+    width: 7px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.usedWords {
+    background-color: white;
+    position: absolute;
+    right: calc(-40% - 10px);
+    height: auto;
+    max-height: 300px;
+    overflow-y: scroll;
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 7px;
+}
+
+    .usedWords > p {
+        text-align: center;
+        font-size: 23px;
+        padding: 5px;
+    }
+
+    .usedWords > div {
+        border-bottom: 2px solid black;
+        text-align: center;
+        word-break: normal;
+        padding: 10px 20px;
+    }
+
+.chat-log-container {
+    position: absolute;
+    top: 57%;
+    height: 30%;
+    width: 100%;
+    background-color: white;
+    border: 2px solid black;
+    overflow-y: scroll;
+}
+
+.chat-log {
+    width: 100%;
+    border-bottom: 1px solid black;
+    background-color: #f2f2f2;
+    padding: 7px;
+}
+
+    .chat-log > p {
+        margin-left: 20px;
+        font-size: 22px;
+        color: green;
+    }
+
+.active-players-button {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 20%;
+    right: 0;
+    transform: translateX(100%);
+    font-size: 40px;
+    background-color: #f2f2f2;
+    padding: 3px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid black;
+    border-left: 0px;
+}
+
+.used-words-button {
+    left: 0 !important;
+    transform: translateX(-200%);
+}
+
+@media(max-width:550px) {
+    body {
+        transition: 0s;
+        background-color: lightgreen;
+    }
+
+    #wordParagraph {
+        font-size: 10vw;
+    }
+
+    .usedWords {
+        display: none;
+    }
+
+    .chat-log-container {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .chat-log > p {
+        font-size: 19px;
+    }
+
+    #wordParagraph {
+        top: 44%;
+    }
+
+    .chat-log-container {
+        top: 60%;
+    }
+
+    .activePlayers {
+        z-index: 3;
+        transition: 0.5s;
+        display: block;
+        top: 0%;
+        left: 0;
+        transform: translateX(calc(-100% - 10vw));
+        width: 70%;
+        border-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .usedWords {
+        z-index: 3;
+        transition: 0.5s;
+        display: block;
+        top: 0%;
+        right: 0;
+        transform: translateX(calc(100% + 10vw));
+        width: 70%;
+        border-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .leftArrow {
+        transition: 0.5s;
+    }
+
+    .container {
+        overflow: hidden;
+    }
+
+    .active-players-button {
+        display: block;
+    }
+}
+
+@media(max-width:550px) {
+    #timer {
+    }
+
+    .chat-log-container {
+        top: 65%;
+    }
+}
+
+@media(min-width:450px) {
+    body {
+        transition: 0s;
+        background-color: lightgreen;
+    }
+}

@@ -1,0 +1,11 @@
+D:\Contact\KontaktGame\KontaktGame.Models\bin\Release\KontaktGame.Models.dll.config
+D:\Contact\KontaktGame\KontaktGame.Models\bin\Release\KontaktGame.Models.dll
+D:\Contact\KontaktGame\KontaktGame.Models\bin\Release\KontaktGame.Models.pdb
+D:\Contact\KontaktGame\KontaktGame.Models\bin\Release\EntityFramework.dll
+D:\Contact\KontaktGame\KontaktGame.Models\bin\Release\EntityFramework.SqlServer.dll
+D:\Contact\KontaktGame\KontaktGame.Models\bin\Release\EntityFramework.xml
+D:\Contact\KontaktGame\KontaktGame.Models\bin\Release\EntityFramework.SqlServer.xml
+D:\Contact\KontaktGame\KontaktGame.Models\obj\Release\KontaktGame.Models.csprojResolveAssemblyReference.cache
+D:\Contact\KontaktGame\KontaktGame.Models\obj\Release\KontaktGame.Models.csproj.CoreCompileInputs.cache
+D:\Contact\KontaktGame\KontaktGame.Models\obj\Release\KontaktGame.Models.dll
+D:\Contact\KontaktGame\KontaktGame.Models\obj\Release\KontaktGame.Models.pdb

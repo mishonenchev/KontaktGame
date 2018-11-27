@@ -35,6 +35,29 @@ namespace KontaktWeb
                     resolver.Resolve<IConnectionManager>().GetHubContext<MyHub>().Clients
                         ).WhenInjectedInto<IPlayerService>();
 
+            kernel.Bind<IQuestionService>()
+               .To<QuestionService>()
+               .InSingletonScope();
+
+            kernel.Bind(typeof(IHubConnectionContext<dynamic>)).ToMethod(context =>
+                    resolver.Resolve<IConnectionManager>().GetHubContext<MyHub>().Clients
+                        ).WhenInjectedInto<IQuestionService>();
+
+            kernel.Bind<IUsedWordService>()
+               .To<UsedWordService>()
+               .InSingletonScope();
+
+            kernel.Bind(typeof(IHubConnectionContext<dynamic>)).ToMethod(context =>
+                    resolver.Resolve<IConnectionManager>().GetHubContext<MyHub>().Clients
+                        ).WhenInjectedInto<IUsedWordService>();
+            kernel.Bind<IWordToGuessService>()
+               .To<WordToGuessService>()
+               .InSingletonScope();
+
+            kernel.Bind(typeof(IHubConnectionContext<dynamic>)).ToMethod(context =>
+                    resolver.Resolve<IConnectionManager>().GetHubContext<MyHub>().Clients
+                        ).WhenInjectedInto<IWordToGuessService>();
+
             kernel.Bind<IPlayerRepository>()
                 .To<PlayerRepository>()
                 .InSingletonScope();

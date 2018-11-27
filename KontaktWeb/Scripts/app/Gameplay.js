@@ -5,21 +5,23 @@
     var vm = new Gameplay();
 
     connection.start().done(function () { vm.startConnection();});
-      
 
     function Gameplay() {
         var self = this;
-        self.message = ko.observable();
-        self.messages = ko.observableArray();
+        self.word = ko.observable("");
+        self.words = ko.observableArray();
         self.users = ko.observableArray();
+        self.button1 = ko.observable("КОНТАКТ");
+        self.button2 = ko.observable("ПОЗНАЙ");
         self.send = function () {
             console.log("click");
-            contoHubProxy.invoke('SendMessage', self.message());
-            self.message("");
+            contoHubProxy.invoke('SendMessage', self.word());
+            self.word("");
         };
         self.startConnection = function () {
             console.log("Started connection.");
             contoHubProxy.invoke('SendActiveUsers');
+            contoHubProxy.invoke('StartGame');
         };
     }
 
@@ -27,7 +29,7 @@
 
     contoHubProxy.on('newMessage', function (message) {
         console.log("New message");
-        vm.messages.push(message);
+        vm.words.push(message);
     });
     contoHubProxy.on('receiveUsers', function (user) {
         console.log("New player connected!");
@@ -36,5 +38,13 @@
         for (var i in _users) {
             vm.users.push(_users[i].name);
         }
+
     });
+    contoHubProxy.on('buttonState', function (firstButton, secondButton) {
+        vm.button1(firstButton);
+        vm.button2(secondButton);
+    });
+
+
+
 //})();

@@ -36,5 +36,6 @@ function displayUsedWord() {
         document.getElementsByClassName("used-words-container")[0].style.transform = "translateX(calc(100% + 10vw))";
         document.getElementById("rightArrow").style.transform = "rotate(0deg)";
         displayUsedWords = false;
+	//left arrow moving when players are added.
     }
 }

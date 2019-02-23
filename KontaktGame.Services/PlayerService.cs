@@ -13,9 +13,15 @@ namespace KontaktGame.Services
     public class PlayerService:IPlayerService
     {
         private readonly IPlayerRepository _playerRepository;
-        public PlayerService(IPlayerRepository playerRepository)
+        private readonly IQuestionService _questionService;
+        private readonly IUsedWordService _usedWordService;
+        private readonly IWordToGuessService _wordToGuessService;
+        public PlayerService(IPlayerRepository playerRepository, IQuestionService questionService, IUsedWordService usedWordService, IWordToGuessService wordToGuessService)
         {
             _playerRepository = playerRepository;
+            _questionService = questionService;
+            _usedWordService = usedWordService;
+            _wordToGuessService = wordToGuessService;
         }
         public void AddPlayer(Player player)
         {
@@ -49,12 +55,23 @@ namespace KontaktGame.Services
         {
             var dateTime = DateTime.Now.AddHours(-1);
             var inactivePlayers = _playerRepository.Where(x => x.IsActive == false && x.LastActiveTime < dateTime).ToList();
-            foreach (var item in inactivePlayers)
+            foreach (var player in inactivePlayers)
             {
-                _playerRepository.Remove(item);
+                foreach (var question in _questionService.GetQuestionByPlayer(player))
+                {
+                    _questionService.Remove(question);
+                }
+                foreach (var usedWord in _usedWordService.GetUsedWordByPlayer(player))
+                {
+                    _usedWordService.Remove(usedWord);
+                }
+                foreach (var wordToGuess in _wordToGuessService.GetWordToGuessByPlayer(player))
+                {
+                    _wordToGuessService.Remove(wordToGuess);
+                }
+                _playerRepository.SaveChanges();
+                _playerRepository.Remove(player);
             }
-            _playerRepository.SaveChanges();
-
         }
         public List<Player> GetAll()
         {

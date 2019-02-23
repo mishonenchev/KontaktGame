@@ -77,7 +77,6 @@ D:\Contact\KontaktGame\KontaktWeb\bin\Microsoft.AI.DependencyCollector.xml
 D:\Contact\KontaktGame\KontaktWeb\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\Contact\KontaktGame\KontaktWeb\bin\Microsoft.AI.WindowsServer.xml
 D:\Contact\KontaktGame\KontaktWeb\bin\Microsoft.AI.Web.xml
-D:\Contact\KontaktGame\KontaktWeb\obj\Debug\KontaktWeb.csprojResolveAssemblyReference.cache
 D:\Contact\KontaktGame\KontaktWeb\obj\Debug\KontaktWeb.csproj.CoreCompileInputs.cache
 D:\Contact\KontaktGame\KontaktWeb\obj\Debug\KontaktWeb.dll
 D:\Contact\KontaktGame\KontaktWeb\obj\Debug\KontaktWeb.pdb
@@ -120,3 +119,5 @@ D:\Contact\KontaktGame\KontaktWeb\bin\KontaktGame.Database.dll.config
 D:\Contact\KontaktGame\KontaktWeb\bin\KontaktGame.Models.pdb
 D:\Contact\KontaktGame\KontaktWeb\bin\KontaktGame.Models.dll.config
 D:\Contact\KontaktGame\KontaktWeb\bin\KontaktGame.Services.pdb
+D:\Contact\KontaktGame\KontaktWeb\obj\Debug\KontaktWeb.csprojAssemblyReference.cache
+D:\Contact\KontaktGame\KontaktWeb\obj\Debug\KontaktWeb.csproj.CopyComplete

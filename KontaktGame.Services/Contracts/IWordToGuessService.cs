@@ -11,6 +11,8 @@ namespace KontaktGame.Services.Contracts
     {
         void AddWordToGuess(WordToGuess wordToGuess);
         List<WordToGuess> GetAll();
+        IEnumerable<WordToGuess> GetWordToGuessByPlayer(Player player);
+        void Remove(WordToGuess wordToGuess);
         void Update();
     }
 }

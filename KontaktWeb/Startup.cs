@@ -102,7 +102,8 @@ namespace KontaktWeb
             config.Resolver = resolver;
             Startup.ConfigureSignalR(app, config);
             GlobalConfiguration.Configuration.UseSqlServerStorage("DefaultConnection");
-
+            app.UseHangfireDashboard();
+            app.UseHangfireServer();
         }
         private static void ConfigureSignalR(IAppBuilder app, HubConfiguration config)
         {

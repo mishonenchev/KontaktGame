@@ -25,6 +25,15 @@ namespace KontaktGame.Services
         {
             return _usedWordRepository.GetAll().ToList();
         }
+        public IEnumerable<UsedWord> GetUsedWordByPlayer(Player player)
+        {
+            return _usedWordRepository.Where(x => x.PlayerWhoUsed.Id == player.Id).ToList();
+        }
+        public void Remove(UsedWord usedWord)
+        {
+            _usedWordRepository.Remove(usedWord);
+            _usedWordRepository.SaveChanges();
+        }
         public void Update()
         {
             _usedWordRepository.SaveChanges();

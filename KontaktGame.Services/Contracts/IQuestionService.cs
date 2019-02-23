@@ -11,6 +11,8 @@ namespace KontaktGame.Services.Contracts
     {
         void AddQuestion(Question question);
         List<Question> GetAll();
+        IEnumerable<Question> GetQuestionByPlayer(Player player);
+        void Remove(Question question);
         void Update();
     }
 }

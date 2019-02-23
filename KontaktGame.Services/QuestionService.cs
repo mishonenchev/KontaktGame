@@ -25,6 +25,15 @@ namespace KontaktGame.Services
         {
             return _questionRepository.GetAll().ToList();
         }
+        public IEnumerable<Question> GetQuestionByPlayer(Player player)
+        {
+            return _questionRepository.Where(x => x.PlayerWhoAsked.Id == player.Id).ToList();
+        }
+        public void Remove(Question question)
+        {
+            _questionRepository.Remove(question);
+            _questionRepository.SaveChanges();
+        }
         public void Update()
         {
             _questionRepository.SaveChanges();

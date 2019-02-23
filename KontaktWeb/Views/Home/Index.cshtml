@@ -7,27 +7,29 @@
 <html>
 <head>
     @Styles.Render("~/Content/style.css")
+    @Styles.Render("~/Content/bootstrap.css")
     <title>@ViewBag.Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="container">
+    <div class="myContainer">
         <div class="container-word">
-            <div id="timer"><p><span id="timerMinutes">1</span>:<span id="timerSeconds">54</span></p></div>
+            <div id="timer"><p><span data-bind="text: '1:50'" id="timerMinutes">1</span></p></div>
             <p id="wordParagraph">Хирошима</p>
-            <p id="questionAsked">Въпрос:<span id="question"></span></p>
+            <p id="questionAsked">Думата свързана ли е с <span id="question" data-bind="text: question"></span>?</p>
+            <p id="answer" data-bind="text: answer">Отговор...</p>
             <input type="text" data-bind="value: word" class="enter-name main-input" placeholder="Въведи дума..">
-            <button data-bind="click: word()!='' ? send : function(){}, text: button1" class="buttonForm buttonFormContact" >КОНТАКТ</button>
-            <button data-bind="text: button2" class="buttonForm buttonFormGuess">ПОЗНАЙ</button>
+            <button data-bind="click: word()!='' ? button1Action : function(){}, text: button1" class="buttonForm buttonFormContact">КОНТАКТ</button>
+            <button data-bind="click: word()!='' ? button2Action : function(){}, text: button2" class="buttonForm buttonFormGuess">ПОЗНАЙ</button>
             <div class="activePlayers">
                 <div class="active-players-button" onclick="displayActivePlayers()"><div id="leftArrow">></div></div>
                 <div class="activePlayers-inner">
-                    <!-- ko foreach: users-->
+                    <!--ko foreach: users-->
                     <div class="active-player-box">
                         <span class="green-dot"></span>
                         <p data-bind="text: $data"></p>
                     </div>
-                    <!-- /ko-->
+                    <!--/ko-->
                 </div>
                 <button>Откажи се</button>
             </div>
@@ -35,23 +37,48 @@
                 <div class="used-words-button" onclick="displayUsedWord()"><div id="rightArrow">&#60;</div></div>
                 <div class="used-words-inner">Използвани думи</div>
                 <div class="used-words-scroll"></div>
-                <p>Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, Хитлер, Евреин, Пещ, </p>
+                <p>
+                    <span>Хитлер, Евреин, Пещ,</span>
+                    <!--ko foreach: usedWords-->
+                    <span data-bind="text: $data + ','"></span>
+                    <!--/ko-->
+                </p>
             </div>
         </div>
 
         <div id="messages" class="chat-log-container">
             <div class="chat-log">
-                <p style="color: rgba(255,0,0) !important;">Ако четеш това си голям педал!</p>
+                <p style="color: red !important;">Ако четеш това си голям!</p>
             </div>
             <!--ko foreach: words-->
             <div class="chat-log">
                 <p data-bind="text: $data"></p>
             </div>
             <!--/ko-->
+        </div>
 
+
+        <div class="modal" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Въведи дума:</h5>
+                        <button data-bind="click: modalNextPlayer"type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input class="form-control" type="text" data-bind="value: inputWordToGuess" placeholder="Дума..">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-bind="click: sendWordToGuess" class="btn btn-primary" data-dismiss="modal">Send</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/app/Gameplay.js"></script>
     <script src="~/Scripts/app/main.js"></script>
 </body>

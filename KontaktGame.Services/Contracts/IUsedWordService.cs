@@ -11,6 +11,8 @@ namespace KontaktGame.Services.Contracts
     {
         void AddUsedWord(UsedWord usedWord);
         List<UsedWord> GetAll();
+        IEnumerable<UsedWord> GetUsedWordByPlayer(Player player);
+        void Remove(UsedWord usedWord);
         void Update();
     }
 }

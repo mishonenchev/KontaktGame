@@ -1,4 +1,3 @@
-D:\Contact\KontaktGame\KontaktGame.Database\obj\Debug\KontaktGame.Database.csprojResolveAssemblyReference.cache
 D:\Contact\KontaktGame\KontaktGame.Database\obj\Debug\KontaktGame.Database.csproj.CoreCompileInputs.cache
 D:\Contact\KontaktGame\KontaktGame.Database\bin\Debug\KontaktGame.Database.dll.config
 D:\Contact\KontaktGame\KontaktGame.Database\bin\Debug\KontaktGame.Database.dll
@@ -12,3 +11,5 @@ D:\Contact\KontaktGame\KontaktGame.Database\bin\Debug\EntityFramework.xml
 D:\Contact\KontaktGame\KontaktGame.Database\bin\Debug\EntityFramework.SqlServer.xml
 D:\Contact\KontaktGame\KontaktGame.Database\obj\Debug\KontaktGame.Database.dll
 D:\Contact\KontaktGame\KontaktGame.Database\obj\Debug\KontaktGame.Database.pdb
+D:\Contact\KontaktGame\KontaktGame.Database\obj\Debug\KontaktGame.Database.csprojAssemblyReference.cache
+D:\Contact\KontaktGame\KontaktGame.Database\obj\Debug\KontaktGame.Database.csproj.CopyComplete

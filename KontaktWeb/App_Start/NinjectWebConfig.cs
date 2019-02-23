@@ -90,7 +90,18 @@ namespace MyExams.App_Start
                .Bind<IPlayerService>()
                .To<PlayerService>()
            .InRequestScope();
-
+            kernel
+              .Bind<IQuestionService>()
+              .To<QuestionService>()
+          .InRequestScope();
+            kernel
+              .Bind<IUsedWordService>()
+              .To<UsedWordService>()
+          .InRequestScope();
+            kernel
+              .Bind<IWordToGuessService>()
+              .To<WordToGuessService>()
+          .InRequestScope();
         }
     }
 }

@@ -25,6 +25,15 @@ namespace KontaktGame.Services
         {
             return _wordToGuessRepository.GetAll().ToList();
         }
+        public IEnumerable<WordToGuess> GetWordToGuessByPlayer(Player player)
+        {
+            return _wordToGuessRepository.Where(x => x.PlayerWhoIsAsked.Id == player.Id).ToList();
+        }
+        public void Remove(WordToGuess wordToGuess)
+        {
+            _wordToGuessRepository.Remove(wordToGuess);
+            _wordToGuessRepository.SaveChanges();
+        }
         public void Update()
         {
             _wordToGuessRepository.SaveChanges();

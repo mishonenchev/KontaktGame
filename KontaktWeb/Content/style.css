@@ -67,7 +67,7 @@ body {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.container {
+.myContainer {
     height: 100%;
     max-width: 700px;
     position: relative;
@@ -93,7 +93,7 @@ body {
     font-family: sans-serif;
     background-color: white;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -103,6 +103,19 @@ body {
     background-color: #f2f2f2;
     width: 100%;
     position: absolute;
+    top: 60%;
+    bottom: 0;
+    font-size: 18px;
+    text-align: center;
+    border-top: 1px solid black;
+    font-style: italic;
+}
+#answer {
+    padding: 5px;
+    background-color: #f2f2f2;
+    width: 100%;
+    position: absolute;
+    top: 80%;
     bottom: 0;
     font-size: 18px;
     text-align: center;
@@ -159,14 +172,21 @@ body {
 
 .buttonFormContact:hover {
     cursor: pointer;
-    background-color: lightblue;
+    background-color: lightgreen;
 }
 
 .buttonFormGuess:hover {
     cursor: pointer;
     background-color: lightgreen;
 }
-
+.buttonFormContact:active {
+    cursor: pointer;
+    background-color: green;
+}
+.buttonFormGuess:active {
+    cursor: pointer;
+    background-color: green;
+}
 .buttonFormGuess {
     right: 0;
     width: 48%;
@@ -246,6 +266,14 @@ body {
 }
 
     .used-words-container > p {
+        text-align: center;
+        font-size: 23px;
+        padding: 5px;
+        overflow-y: scroll;
+        display: block;
+        max-height: 220px;
+    }
+    .used-words-container > span {
         text-align: center;
         font-size: 23px;
         padding: 5px;

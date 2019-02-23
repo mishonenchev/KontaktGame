@@ -9,6 +9,7 @@ D:\Contact\KontaktGame\KontaktGame.Services\bin\Debug\KontaktGame.Database.dll.c
 D:\Contact\KontaktGame\KontaktGame.Services\bin\Debug\KontaktGame.Models.pdb
 D:\Contact\KontaktGame\KontaktGame.Services\bin\Debug\KontaktGame.Models.dll.config
 D:\Contact\KontaktGame\KontaktGame.Services\bin\Debug\EntityFramework.xml
-D:\Contact\KontaktGame\KontaktGame.Services\obj\Debug\KontaktGame.Services.csprojResolveAssemblyReference.cache
 D:\Contact\KontaktGame\KontaktGame.Services\obj\Debug\KontaktGame.Services.dll
 D:\Contact\KontaktGame\KontaktGame.Services\obj\Debug\KontaktGame.Services.pdb
+D:\Contact\KontaktGame\KontaktGame.Services\obj\Debug\KontaktGame.Services.csprojAssemblyReference.cache
+D:\Contact\KontaktGame\KontaktGame.Services\obj\Debug\KontaktGame.Services.csproj.CopyComplete
